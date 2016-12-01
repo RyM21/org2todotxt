@@ -21,12 +21,13 @@ def load_data():
     db = []
     for agenda in agenda_files:
         path = os.path.join(base, agenda)
+        path = os.path.expanduser(path)
 
         # Parse file tags
         file_projects = []
-        with open(path, 'r') as f:
+        with open(path, 'r', encoding='utf-8') as f:
             for line in f:
-                line = line.decode('utf-8')
+                #line = line.decode('utf-8')
                 match = re.match('^#\+FILETAGS: (.*)$', line, flags=re.UNICODE)
                 if match:
                     match = match.groups()[0].split(' ')
@@ -207,7 +208,7 @@ def export_todotxt(tasks):
             s.append('+' + project)
 
         s = " ".join(s)
-        print s.encode('utf-8')
+        print(s) #s.encode('utf-8'))
 
 def main():
     u"Convert org entries into todo2txt file"

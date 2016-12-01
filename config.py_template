@@ -3,26 +3,22 @@
 ##
 # Config
 agenda_files = [
-    "life",
-    "tasks",
-    "notes",
-    "inbox",
-    "work",
+    "todo",
 ]
 
-base = "/home/USER/.org/"
+base = "~/notes"
 
 # Order of todos suggests priority (for the same ABC priorities and due dates)
-todos = ["NEXT", "TODO", "DELEGATED", "DEFERRED", "DONE", "CANCELLED", "PROJECT"]
+#todos = ["NEXT", "TODO", "DELEGATED", "DEFERRED", "DONE", "CANCELLED", "PROJECT"]
 
 # Those are not included in output:
-todos_done = ["DONE", "CANCELLED", "DEFERRED"]
+todos_done = ["DONE", "DELEGATED", "WAITING"]
 
 # Warning: In org-mode this is 'B', but it gets differently sorted in todotxt.
-default_priority = 'D'
+default_priority = 'C'
 
 # Any tags on projects are inherited by subtrees
-project_todo = "PROJECT"
+project_todo = "TODO"
 
 # Tags on files are treated as projects:
 # #+FILETAGS: LIFE
